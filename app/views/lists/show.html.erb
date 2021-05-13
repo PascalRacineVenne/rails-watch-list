@@ -1,6 +1,18 @@
 <p>
-    Name:
+    List name:
   <%= @list.name %>
 </p>
 
-
+<!-- add list of bookmarks -->
+<p>
+  Bookmarks:
+<ul>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li> Title: <%= bookmark.movie.title %>  </li>
+    <li> Overview: <%= bookmark.movie.overview %>  </li>
+    <li> <%= image_tag bookmark.movie.poster_url, alt: "Le Wagon", width: 200 %> </li>
+    <li> Rating: <%= bookmark.movie.rating %>  </li>
+    <li> Comment: <%= bookmark.comment %>  </li>
+  <% end %>
+  </ul>
+</p>
