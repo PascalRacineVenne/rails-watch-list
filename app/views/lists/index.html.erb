@@ -1,19 +1,22 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
   <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <h1>This is the <strong>Ultimate</strong> watchlist!</h1>
+    <p>Create your own personal lists, all in one amazing app.</p>
   </div>
 </div>
 
-
-<%= link_to "Create a list", "#", class: "btn btn-flat" %>
-
-
-
-<h1>List index</h1>
-<% @lists.each do |list| %>
-  <li> <%= link_to list.name, list_path(list)%> </li>
-<% end %>
-
-
+<div class="container">
+  <div class="d-flex justify-content-between my-4">
+    <h2>My Lists</h2>
+    <%= link_to "Create a list", "/lists/new", class: "btn btn-flat" %>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-4">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)">
+          <p> <%= link_to list.name, list_path(list)%> </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
